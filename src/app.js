@@ -1,10 +1,17 @@
 import './scss/app.scss';
 import 'bootstrap';
-import ClayBadge from 'clay-badge';
+import bb from 'billboard.js'
 
-const badge = new ClayBadge(
-    {
-        label: 'My Badge'
+var chart = bb.generate({
+    data: {
+        columns: [
+            ["data1", 30],
+            ["data2", 120]
+        ],
+        type: "donut"
     },
-    '#my-element'
-);
+    donut: {
+        title: "Iris Petal Width"
+    },
+    bindto: "#donut-chart"
+});
